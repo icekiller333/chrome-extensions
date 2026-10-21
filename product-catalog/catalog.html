@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Product Catalog</title>
+<link rel="stylesheet" href="catalog.css">
+</head>
+<body>
+  <header>
+    <div class="title"><span class="logo">🏷️</span><h1>Product Catalog</h1></div>
+    <div class="stats">
+      <div><strong id="sProducts">0</strong><span>products</span></div>
+      <div><strong id="sUnits">0</strong><span>units</span></div>
+      <div><strong id="sValue">$0.00</strong><span>stock value</span></div>
+      <div><strong id="sRestock">0</strong><span>restock needed</span></div>
+    </div>
+    <div class="actions">
+      <button id="addProductBtn" class="primary">+ Add product</button>
+      <button id="seedBtn">Load my current lines</button>
+      <button id="exportJsonBtn">Export JSON</button>
+      <button id="importJsonBtn">Import JSON</button>
+      <button id="exportCsvBtn">Export CSV</button>
+      <input id="importFile" type="file" accept="application/json,.json" hidden>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside>
+      <div class="aside-head">
+        <h2>Categories</h2>
+        <button id="addCategoryBtn" title="Add top-level category">+ Category</button>
+      </div>
+      <nav id="tree"></nav>
+    </aside>
+
+    <main>
+      <div class="filters">
+        <input id="search" type="search" placeholder="Search name, notes, tags…">
+        <select id="tagFilter"><option value="">All tags</option></select>
+        <span id="showingCount" class="showing"></span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th><th>Category</th><th>Price</th><th>Qty</th>
+            <th>Target</th><th>Restock</th><th>Tags</th><th></th>
+          </tr>
+        </thead>
+        <tbody id="productRows"></tbody>
+      </table>
+      <p id="noProducts" class="no-products" hidden>No products match. Add one with “+ Add product”.</p>
+    </main>
+  </div>
+
+  <!-- Category modal -->
+  <div id="categoryModal" class="modal-backdrop" hidden>
+    <form id="categoryForm" class="modal">
+      <h2 id="categoryFormTitle">Add category</h2>
+      <label>Name <input id="cfName" required></label>
+      <label>Parent category
+        <select id="cfParent"></select>
+      </label>
+      <label>Category price (optional)
+        <input id="cfPrice" type="number" min="0" step="0.01" placeholder="e.g. 5.00">
+      </label>
+      <p class="helper">Applies to products without their own price. Products in subcategories inherit it too, unless a closer category or the product itself has a price.</p>
+      <div class="modal-actions">
+        <button type="button" class="cancel" data-close="categoryModal">Cancel</button>
+        <button type="submit" class="primary">Save category</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Product modal -->
+  <div id="productModal" class="modal-backdrop" hidden>
+    <form id="productForm" class="modal">
+      <h2 id="productFormTitle">Add product</h2>
+      <label>Name <input id="pfName" required></label>
+      <label>Category
+        <select id="pfCategory"></select>
+      </label>
+      <label>Own price (optional)
+        <input id="pfPrice" type="number" min="0" step="0.01">
+      </label>
+      <p class="helper" id="pfPriceHint"></p>
+      <div class="row2">
+        <label>Quantity <input id="pfQty" type="number" min="0" step="1" value="0"></label>
+        <label>Target quantity <input id="pfTarget" type="number" min="0" step="1" value="0"></label>
+      </div>
+      <label>Tags (comma-separated) <input id="pfTags" placeholder="e.g. spooky, bestseller"></label>
+      <label>Notes <textarea id="pfNotes" rows="2"></textarea></label>
+      <div class="modal-actions">
+        <button type="button" class="cancel" data-close="productModal">Cancel</button>
+        <button type="submit" class="primary">Save product</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="shared.js"></script>
+  <script src="catalog.js"></script>
+</body>
+</html>

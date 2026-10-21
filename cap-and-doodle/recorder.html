@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cap &amp; Doodle — GIF Recorder</title>
+<link rel="stylesheet" href="recorder.css">
+</head>
+<body>
+  <h1>🎞️ Ghetto GIF</h1>
+  <p id="status">Setting up…</p>
+  <div id="countdown"></div>
+  <video id="preview" autoplay muted playsinline></video>
+  <div id="progressWrap" hidden><div id="progress"></div></div>
+  <img id="result" alt="Your GIF" hidden>
+  <div id="actions" hidden>
+    <button id="saveBtn" class="pink">💾 Save GIF</button>
+    <button id="againBtn">🔁 Record again</button>
+    <button id="closeBtn">Close</button>
+  </div>
+  <p class="dim">The GIF is 5 seconds at 10 fps, max 480px wide, looping. Keep the target tab up front while it records — the page overlay counts you in.</p>
+  <script src="gif-encoder.js"></script>
+  <script src="recorder.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+* { box-sizing: border-box; margin: 0; }
+body {
+  width: 360px;
+  font-family: system-ui, sans-serif;
+  background: #fff8e7;
+  color: #141414;
+  padding: 12px;
+}
+header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.logo { font-size: 22px; }
+h1 { font-size: 18px; letter-spacing: .2px; }
+#search {
+  width: 100%; padding: 9px 10px; font-size: 14px;
+  border: 3px solid #141414; border-radius: 0; background: #fff;
+}
+.totals { display: flex; gap: 8px; margin: 10px 0; }
+.totals div {
+  flex: 1; background: #ffe066; border: 3px solid #141414;
+  box-shadow: 3px 3px 0 #141414; padding: 6px 8px; text-align: center;
+}
+.totals strong { display: block; font-size: 16px; }
+.totals span { font-size: 11px; text-transform: uppercase; }
+h2 { font-size: 13px; text-transform: uppercase; margin: 12px 0 6px; }
+ul { list-style: none; }
+li {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 8px;
+  background: #fff; border: 2px solid #141414; padding: 6px 8px; margin-bottom: 5px;
+}
+li .name { font-weight: 600; font-size: 13px; }
+li .meta { font-size: 12px; white-space: nowrap; }
+li .need { color: #b00020; font-weight: 700; }
+.empty { font-size: 13px; padding: 6px 0; }
+.open-btn {
+  width: 100%; margin-top: 12px; padding: 10px; font-size: 15px; font-weight: 700;
+  background: #4dabf7; color: #141414; border: 3px solid #141414; border-radius: 0;
+  box-shadow: 4px 4px 0 #141414; cursor: pointer;
+}
+.open-btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 #141414; }

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cap &amp; Doodle — Editor</title>
+<link rel="stylesheet" href="editor.css">
+</head>
+<body>
+<header>
+  <h1>📸 Cap &amp; Doodle</h1>
+  <span id="status">Loading your capture…</span>
+</header>
+
+<div id="toolbar">
+  <div class="group">
+    <button data-tool="move" class="tool active" title="Move emojis / text">🖐️ Move</button>
+    <button data-tool="draw" class="tool" title="Draw">✏️ Draw</button>
+    <button data-tool="erase" class="tool" title="Erase drawings">🧽 Erase</button>
+    <button data-tool="crop" class="tool" title="Crop — drag a rectangle on the image">✂️ Crop</button>
+  </div>
+  <div class="group">
+    <label>Color <input type="color" id="color" value="#ff2d78"></label>
+    <label>Brush <input type="range" id="brush" min="1" max="40" value="6"></label>
+    <button id="undoBtn">↩️ Undo</button>
+    <button id="redoBtn">↪️ Redo</button>
+    <button id="clearDrawBtn">🗑️ Clear drawing</button>
+  </div>
+  <div class="group">
+    <button id="emojiBtn">😀 Emojis</button>
+    <input type="text" id="memeText" placeholder="Meme text…" maxlength="60">
+    <button id="addTextBtn">➕ Add text</button>
+  </div>
+  <div class="group" id="selPanel" hidden>
+    <span>Selected:</span>
+    <label>Size <input type="range" id="selSize" min="3" max="60" value="14"></label>
+    <button id="selDelete">🗑️ Delete</button>
+  </div>
+  <div class="group" id="cropPanel" hidden>
+    <button id="cropApply">✅ Apply crop</button>
+    <button id="cropCancel">Cancel</button>
+  </div>
+</div>
+
+<div id="emojiPanel" hidden></div>
+
+<main id="stageWrap">
+  <div id="stage" hidden>
+    <img id="baseImg" alt="capture">
+    <canvas id="drawCanvas"></canvas>
+    <div id="objects"></div>
+    <div id="cropRect" hidden></div>
+  </div>
+  <div id="emptyState">
+    <p><strong>No capture loaded.</strong></p>
+    <p>Use the toolbar icon to capture a tab, or:</p>
+    <p>
+      <button id="openFileBtn">📂 Open an image file</button>
+      <input type="file" id="fileInput" accept="image/*" hidden>
+    </p>
+    <p class="dim">…or paste an image (Ctrl/Cmd+V), or drag &amp; drop one onto this page.</p>
+  </div>
+</main>
+
+<footer>
+  <button id="copyBtn" class="pink">📋 Copy PNG</button>
+  <button id="savePng" class="yellow">💾 Save PNG</button>
+  <button id="saveWebp" class="teal">💾 Save WEBP</button>
+  <button id="saveJpg" class="orange">💾 Save JPG</button>
+  <span id="sizeInfo" class="dim"></span>
+</footer>
+
+<script src="editor.js"></script>
+</body>
+</html>

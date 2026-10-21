@@ -1,0 +1,19 @@
+{
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Cap & Doodle"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "description": "Screenshot any tab, crop it, draw on it, stamp movable/resizable emojis and meme text, save or copy as PNG, WEBP or JPG. Plus a 5-second ghetto GIF recorder: pick an area, 3-2-1, drag stuff around, get a GIF.",
+  "manifest_version": 3,
+  "name": "Cap & Doodle",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "tabCapture"
+  ],
+  "version": "1.0.0"
+}

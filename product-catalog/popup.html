@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Product Catalog</title>
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <span class="logo">🏷️</span>
+    <h1>Product Catalog</h1>
+  </header>
+
+  <input id="search" type="search" placeholder="Search products or tags…" autocomplete="off">
+
+  <section class="totals">
+    <div><strong id="tProducts">0</strong><span>products</span></div>
+    <div><strong id="tUnits">0</strong><span>units</span></div>
+    <div><strong id="tValue">$0.00</strong><span>stock value</span></div>
+  </section>
+
+  <h2 id="listTitle">Low stock</h2>
+  <ul id="list"></ul>
+  <p id="empty" class="empty" hidden>Nothing here yet. Open the catalog to add products.</p>
+
+  <button id="openCatalog" class="open-btn">Open Catalog →</button>
+
+  <script src="shared.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

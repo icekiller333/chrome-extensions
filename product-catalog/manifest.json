@@ -1,0 +1,12 @@
+{
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "description": "Nested product catalog with inherited category pricing, tags, and stock / restock tracking.",
+  "manifest_version": 3,
+  "name": "Product Catalog",
+  "permissions": [
+    "storage"
+  ],
+  "version": "1.0.0"
+}
