@@ -1,0 +1,1 @@
+{"action":{"default_popup":"popup.html","default_title":"Text Cleaner"},"description":"Strip hidden/zero-width characters, weird unicode spaces and smart punctuation, and extra spaces from pasted text. Clean, copy, done.","manifest_version":3,"name":"Text Cleaner","permissions":["storage"],"version":"1.0.0"}

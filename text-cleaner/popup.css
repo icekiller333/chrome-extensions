@@ -1,0 +1,17 @@
+body { width: 300px; margin: 0; padding: 12px; font-family: system-ui, sans-serif; background: #fff8e7; color: #111; }
+h1 { font-size: 16px; margin: 0 0 8px; }
+textarea {
+  width: 100%; box-sizing: border-box; resize: vertical;
+  border: 3px solid #111; border-radius: 0; padding: 8px;
+  font-size: 13px; font-family: ui-monospace, monospace; background: #fff;
+}
+button {
+  display: block; width: 100%; margin: 8px 0 0; padding: 9px;
+  font-size: 13.5px; font-weight: 700; text-align: left;
+  background: #fff; border: 3px solid #111; border-radius: 0;
+  box-shadow: 3px 3px 0 #111; cursor: pointer;
+}
+button:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 #111; }
+button.pink { background: #ff8fc7; }
+button.small { font-size: 12px; font-weight: 600; padding: 7px; box-shadow: 2px 2px 0 #111; }
+.stats { font-size: 12px; font-weight: 600; min-height: 15px; margin: 8px 0 0; }

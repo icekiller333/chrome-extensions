@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Text Cleaner</title>
+<link rel="stylesheet" href="cleaner.css">
+</head>
+<body>
+<header>
+  <h1>🧹 Text Cleaner</h1>
+  <span class="dim">Paste dirty text → get clean text. Nothing leaves your machine.</span>
+</header>
+
+<section id="opts">
+  <label><input type="checkbox" id="opt-removeHidden"> Remove hidden / zero-width / control characters</label>
+  <label><input type="checkbox" id="opt-unicodeSpaces"> Unicode spaces (NBSP etc.) → normal space</label>
+  <label><input type="checkbox" id="opt-smartPunct"> Smart punctuation → ASCII (“ ” ‘ ’ — …)</label>
+  <label><input type="checkbox" id="opt-tabsToSpaces"> Tabs → space</label>
+  <label><input type="checkbox" id="opt-trimLines"> Trim spaces at start/end of every line</label>
+  <label><input type="checkbox" id="opt-collapseSpaces"> Collapse 2+ spaces → 1</label>
+  <label><input type="checkbox" id="opt-collapseBlank"> Collapse 3+ blank lines → 1 blank line</label>
+  <label><input type="checkbox" id="opt-stripHtml"> Strip HTML tags (+ decode entities)</label>
+  <label><input type="checkbox" id="opt-removeEmoji"> Remove emoji</label>
+  <label class="auto"><input type="checkbox" id="autoClean"> Auto-clean as I type</label>
+</section>
+
+<main>
+  <div class="pane">
+    <h2>Dirty <span id="inCount" class="dim"></span></h2>
+    <textarea id="input" placeholder="Paste text here — from ChatGPT, Word, a PDF, a web page…"></textarea>
+  </div>
+  <div class="pane">
+    <h2>Clean <span id="outCount" class="dim"></span></h2>
+    <textarea id="output" readonly placeholder="Clean text appears here."></textarea>
+  </div>
+</main>
+
+<div id="bar">
+  <button id="cleanBtn" class="pink">🧹 Clean</button>
+  <button id="copyBtn" class="yellow">📋 Copy clean text</button>
+  <button id="swapBtn">⬆️ Use output as input</button>
+  <button id="downloadBtn">💾 Download .txt</button>
+  <button id="clearBtn">Clear</button>
+</div>
+
+<section id="report" hidden>
+  <h2>What was in there</h2>
+  <p id="reportSummary"></p>
+  <ul id="hiddenList"></ul>
+</section>
+
+<script src="clean.js"></script>
+<script src="cleaner.js"></script>
+</body>
+</html>
